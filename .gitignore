@@ -1,0 +1,6 @@
+/.venv
+/find_compounds.py
+/kow.py
+/list_models.py
+/pyjcosmo
+/pyjcosmo.egg-info
