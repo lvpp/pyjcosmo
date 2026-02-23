@@ -6,7 +6,7 @@
 
 **JCOSMO** is a computational chemistry package designed for predicting thermodynamic properties using COSMO-based models and more.
 
-> **Note:** This repository contains documentation only. The JCOSMO software itself is hosted separately and distributed under a different license.  
+> **Note:** This repository contains the wrapper code only. The JCOSMO software itself is hosted separately and distributed under a different license.  
 
 ## License  
 
@@ -36,14 +36,14 @@ This wrapper requires a running instance of the JCOSMO Java application with the
 ## Quick Start
 
 ### 1. List Available Models
-```
+```python
 import pyjcosmo
 jc = pyjcosmo.JCosmoWrapper()
 print(jc.list_models())
 ```
 
 ### 2. Compute Activity Coefficients and Excess Properties
-```
+```python
 from pyjcosmo import JCosmoWrapper
 
 jc = JCosmoWrapper()
@@ -66,7 +66,7 @@ print(f"HE/RT: {he_rt}")
 ### 3. Compound Discovery (Screening)
 Search the JCOSMO database for specific chemical groups or ion charges, useful for ionic liquid screening:
 
-```
+```python
 from pyjcosmo import JCosmoWrapper
 
 # Initialize the wrapper and model
@@ -82,6 +82,7 @@ for cat in cations:
 
 ## Citation
 Please cite the following works if you use JCOSMO in your research:
+* Soares et al. (2025), J. Chem. Theory & Comp. DOI:10.1021/acs.jctc.5c01368
 * Ferrarini et al. (2018), AIChe J. DOI:10.1002/aic.16194
 * Soares and Gerber (2013), Ind. Eng. Chem. Res. DOI:10.1021/ie400170a
 * Soares et al. (2013), Ind. Eng. Chem. Res. DOI:10.1021/ie4013979
