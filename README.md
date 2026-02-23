@@ -47,7 +47,7 @@ print(jc.list_models())
 from pyjcosmo import JCosmoWrapper
 
 jc = JCosmoWrapper()
-model = jc.get_model('COSMO-SAC-HB2 (GAMESS)')
+model = jc.get_model('CS25')
 
 # Set compounds and state
 model.set_compounds(['ACETONE', 'CHLOROFORM'])
@@ -87,3 +87,48 @@ Please cite the following works if you use JCOSMO in your research:
 * Soares and Gerber (2013), Ind. Eng. Chem. Res. DOI:10.1021/ie400170a
 * Soares et al. (2013), Ind. Eng. Chem. Res. DOI:10.1021/ie4013979
 * Gerber and Soares (2013), Braz. J. Chem. Eng. DOI:10.1590/S0104-66322013000100002
+
+### Deploying on PyPI (pip)
+
+**For staff only**.
+
+#### Install the prerequesites:
+```sh
+pip install build twine
+```
+
+#### Live local testing:
+```sh
+pip install -e .
+```
+And then run test scripts.
+
+#### Build the package
+```sh
+python3 -m build
+```
+
+#### Upload to TestPyPI (Optional but Recommended)
+```sh
+python3 -m twine upload --repository testpypi dist/*
+```
+
+Testing it in a fresh venv:
+```sh
+cd ~
+mkdir pyjcosmo_test && cd pyjcosmo_test
+python3 -m venv .test_venv
+source .test_venv/bin/activate
+```
+
+Then install from TestPyPI and test the installation:
+```sh
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ pyjcosmo
+
+python -c "import pyjcosmo; print(pyjcosmo.__version__)"
+```
+
+#### Upload to PyPI:
+```sh
+python3 -m twine upload dist/*
+```

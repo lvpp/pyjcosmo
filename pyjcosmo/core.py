@@ -23,7 +23,7 @@ class JCosmoWrapper:
         """Returns a list of available models."""
         return self.JCOSMO.listModels()
 
-    def get_model(self, model_name='COSMO-SAC-HB2 (GAMESS)'):
+    def get_model(self, model_name='CS25'):
         """Returns a configured model instance."""
         return CosmoModel(self.JCOSMO.newModel(model_name), self.gateway)
 

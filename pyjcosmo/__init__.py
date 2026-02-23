@@ -4,7 +4,7 @@
 from .core import JCosmoWrapper
 
 # You can also define package-level metadata
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 __author__ = "Rafael de Pelegrini Soares"
 
 # Define what is exported when a user does 'from pyjcosmo import *'

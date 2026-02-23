@@ -3,4 +3,5 @@
 /kow.py
 /list_models.py
 /pyjcosmo.egg-info
+/dist
 *.pyc
