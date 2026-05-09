@@ -49,6 +49,14 @@ class CosmoModel:
         for i, name in enumerate(compounds):
             java_array[i] = name
         self.model.setCompounds(java_array)
+    
+    def set_ignore_fh(self, ignore):
+        """Optionally ignore the FH combinatorial term."""
+        self.model.setIgnoreFH(ignore)
+
+    def set_use_voutsas_fv(self, ignore):
+        """Use Voutsas et al (1995) exponent in the FH combinatorial term."""
+        self.model.setUseFV(ignore)
 
     def set_temperature(self, t_kelvin):
         self.model.setTemperature(float(t_kelvin))
